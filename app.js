@@ -10,5 +10,5 @@ app.get(`/`, (req, res) => {
 app.get(`/about`, (req, res) => {
     res.send(`I like long walks on the beach`);
 })
-
-app.listen(4000, () => console.log(`Listening on 4000`));
+const port = (process.emv.PORT || 4000);
+app.listen((process.emv.PORT || 4000), () => console.log(`Listening on ${port}`));
