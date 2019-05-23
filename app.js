@@ -1,14 +1,17 @@
 /* eslint-disable no-console */
 const express = require(`express`);
+const path = require('path');
 
 const app = express();
 
-app.get(`/`, (req, res) => {
-    res.send(`Hey world`);
-});
+// Our views path
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
-app.get(`/about`, (req, res) => {
-    res.send(`I like long walks on the beach`);
-})
+//our routes
+const routes = require('./routes');
+app.use('/', routes);
+
 const port = (process.env.PORT || 4000);
 app.listen((process.env.PORT || 4000), () => console.log(`Listening on ${port}`));
+
