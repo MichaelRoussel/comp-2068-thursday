@@ -1,7 +1,10 @@
+block globals 
+
 doctype html
 html(lang="en")
     head   
-        title My Home Page
+        title= (title ? title : "I do not have a title yet!")
 
     body
+        include ../partials/nav.pug
         block content

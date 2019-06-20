@@ -1,0 +1,9 @@
+extends ../layouts/main.pug 
+
+block globals
+    - const title = "About My Super Awesome Blogging Platform"
+
+block content
+    h1#my-unique-id= title
+
+    p.intro-text(data-attr="my value") It was a rainy day in pizzaville
