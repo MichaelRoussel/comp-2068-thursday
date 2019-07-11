@@ -8,15 +8,15 @@ div
       input.form-control(name="blog[title]", required, value=(blog ? blog.title : null))
 
     .form-group
-      label Content
+      label Description
       textarea.form-control(name="blog[content]")
-        = blog ? blog.content : null
+        = arcadegame ? arcadegame.description : null
 
     .form-group
-      label Status
-      select.form-control(name="blog[status]", required)
-        each status in ['DRAFT', 'PUBLISHED']
-          option(value=status, selected=(blog && blog.status === status))= status.toLowerCase()
+      label Rating
+      select.form-control(name="blog[rating]", required)
+        each rating in ['Trash', 'Okay', 'Good', 'Great', 'Amazing', 'Ratchet & Clank']
+          option(value=rating, selected=(blog && blog.rating === rating))= rating
       
     .form-group
       button.btn.btn-dark(type="submit") Submit
